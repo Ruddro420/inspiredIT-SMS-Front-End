@@ -25,8 +25,6 @@ import Results from "./routes/Page/Result/Results";
 import AddResults from "./routes/Page/Result/AddResults";
 import IdCards from "./routes/Page/IdCard/IdCards";
 import AddIdCards from "./routes/Page/IdCard/AddIdCards";
-import Salaries from "./routes/Page/Salary/Salaries";
-import AddSalaries from "./routes/Page/Salary/AddSalaries";
 import Reports from "./routes/Page/Report/Reports";
 import AddReports from "./routes/Page/Report/AddReports";
 import Exams from "./routes/Page/Exam/Exams";
@@ -34,6 +32,8 @@ import AddExams from "./routes/Page/Exam/AddExams";
 import AddSections from "./routes/Page/Sections/AddSections";
 import AddAccounts from "./routes/Page/Accounts/AddAccounts";
 import ViewAccountReport from "./routes/Page/Accounts/ViewAccountReport";
+import PaySalary from "./routes/Page/Salary/PaySalary";
+import SalaryReport from "./routes/Page/Salary/SalaryReport";
 
 const router = createBrowserRouter([
   {
@@ -136,14 +136,14 @@ const router = createBrowserRouter([
         path: "/dashboard/add-cards",
         element: <AddIdCards />,
       },
-      {
-        path: "/dashboard/salaries",
-        element: <Salaries />,
-      },
-      {
-        path: "/dashboard/add-salaries",
-        element: <AddSalaries />,
-      },
+      // {
+      //   path: "/dashboard/salaries",
+      //   element: <Salaries />,
+      // },
+      // {
+      //   path: "/dashboard/add-salaries",
+      //   element: <AddSalaries />,
+      // },
       {
         path: "/dashboard/reports",
         element: <Reports />,
@@ -151,6 +151,14 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/add-reports",
         element: <AddReports />,
+      },
+      {
+        path: "/dashboard/pay-salaries",
+        element: <PaySalary />,
+      },
+      {
+        path: "/dashboard/salary-reports",
+        element: <SalaryReport />,
       },
       {
         path: "/dashboard/exams",

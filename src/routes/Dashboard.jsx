@@ -47,11 +47,12 @@ const Dashboard = () => {
   const [feeNav, setFeeNav] = useState(false);
   const [resultNav, setResultNav] = useState(false);
   const [idCardNav, setIdCardNav] = useState(false);
-  const [salaryNav, setSalaryNav] = useState(false);
+  // const [salaryNav, setSalaryNav] = useState(false);
   const [reportNav, setReportNav] = useState(false);
   const [examNav, setExamNav] = useState(false);
 
   const [accountsNav, setAccountsNav] = useState(false);
+  const [salaryNav, setSalaryNav] = useState(false);
 
   const closeAllMenus = () => {
     setStudentNav(false);
@@ -67,6 +68,7 @@ const Dashboard = () => {
     setExamNav(false);
     setIdCardNav(false);
     setAccountsNav(false);
+    setSalaryNav(false)
   };
 
   const studentNavHandler = () => {
@@ -93,9 +95,16 @@ const Dashboard = () => {
     closeAllMenus();
     setAccountsNav(!accountsNav);
   };
+  const salaryNavHandler = () => {
+    closeAllMenus();
+    setSalaryNav(!salaryNav);
+  };
   const navMenuHandler = () => {
     closeAllMenus();
   };
+  // const salaryNavHandler = () => {
+  //   closeAllMenus();
+  // };
   // const noticeNavHandler = () => {
   //   closeAllMenus();
   //   setNoticeNav(!noticeNav);
@@ -476,6 +485,54 @@ const Dashboard = () => {
                     >
                       <Dot className="h-8 w-8" />
                       View Reports
+                    </Link>
+                  </div>
+                ) : (
+                  ""
+                )}
+
+                {/* Salary Start */}
+                <button className="" onClick={salaryNavHandler}>
+                  <div className="flex items-center justify-between">
+                    <a
+                      href="#"
+                      className={`flex items-center gap-3 rounded-lg px-3 py-2 mt-2 text-muted-foreground transition-all `}
+                    >
+                      <DiamondPercent className="h-4 w-4" />
+                      Salary
+                    </a>
+                    {salaryNav ? (
+                      <Minus className="mt-2 h-4" />
+                    ) : (
+                      <Plus className="mt-2 h-4" />
+                    )}
+                  </div>
+                </button>
+                {salaryNav ? (
+                  <div className="">
+                    <Link
+                      to="/dashboard/pay-salaries"
+                      className={`flex items-center rounded-lg px-3 py-1 mb-1 ml-3 text-muted-foreground transition-all hover:text-white hover:bg-primary ${
+                        selectedMenu === "pay-salaries"
+                          ? "bg-primary text-primary-foreground"
+                          : ""
+                      }`}
+                      onClick={() => setSelectedMenu("pay-salaries")}
+                    >
+                      <Dot className="h-8 w-8" />
+                      Pay Salary
+                    </Link>
+                    <Link
+                      to="/dashboard/salary-reports"
+                      className={`flex items-center rounded-lg px-3 py-1 ml-3 text-muted-foreground transition-all hover:text-white hover:bg-primary ${
+                        selectedMenu === "salary-reports"
+                          ? "bg-primary text-primary-foreground"
+                          : ""
+                      }`}
+                      onClick={() => setSelectedMenu("salary-reports")}
+                    >
+                      <Dot className="h-8 w-8" />
+                      Salary Report
                     </Link>
                   </div>
                 ) : (

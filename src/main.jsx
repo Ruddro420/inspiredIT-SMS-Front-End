@@ -34,6 +34,8 @@ import AddAccounts from "./routes/Page/Accounts/AddAccounts";
 import ViewAccountReport from "./routes/Page/Accounts/ViewAccountReport";
 import PaySalary from "./routes/Page/Salary/PaySalary";
 import SalaryReport from "./routes/Page/Salary/SalaryReport";
+import AdmissionReport from "./routes/Page/Admission/AdmissionReport";
+import AddAdmission from "./routes/Page/Admission/AddAdmission";
 
 const router = createBrowserRouter([
   {
@@ -175,6 +177,14 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/view-accounts-report",
         element: <ViewAccountReport />,
+      },
+      {
+        path: "/dashboard/add-admission",
+        element: <AddAdmission/>,
+      },
+      {
+        path: "/dashboard/admission-reports",
+        element: <AdmissionReport />,
       },
 
       /*       {

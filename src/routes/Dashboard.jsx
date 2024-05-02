@@ -7,6 +7,7 @@ import {
   CircleUser,
   DiamondPercent,
   Dot,
+  FileSliders,
   Home,
   LayoutPanelTop,
   Menu,
@@ -14,6 +15,7 @@ import {
   Package2,
   PersonStanding,
   Plus,
+  ShieldPlus,
   Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -53,6 +55,7 @@ const Dashboard = () => {
 
   const [accountsNav, setAccountsNav] = useState(false);
   const [salaryNav, setSalaryNav] = useState(false);
+  const [admissionNav, setAdmissionNav] = useState(false);
 
   const closeAllMenus = () => {
     setStudentNav(false);
@@ -68,7 +71,8 @@ const Dashboard = () => {
     setExamNav(false);
     setIdCardNav(false);
     setAccountsNav(false);
-    setSalaryNav(false)
+    setSalaryNav(false);
+    setAdmissionNav(false);
   };
 
   const studentNavHandler = () => {
@@ -98,6 +102,10 @@ const Dashboard = () => {
   const salaryNavHandler = () => {
     closeAllMenus();
     setSalaryNav(!salaryNav);
+  };
+  const admissionNavHandler = () => {
+    closeAllMenus();
+    setAdmissionNav(!admissionNav);
   };
   const navMenuHandler = () => {
     closeAllMenus();
@@ -498,7 +506,8 @@ const Dashboard = () => {
                       href="#"
                       className={`flex items-center gap-3 rounded-lg px-3 py-2 mt-2 text-muted-foreground transition-all `}
                     >
-                      <DiamondPercent className="h-4 w-4" />
+                      {/* <DiamondPercent className="h-4 w-4" /> */}
+                      <ShieldPlus className="h-4 w-4" />
                       Salary
                     </a>
                     {salaryNav ? (
@@ -533,6 +542,54 @@ const Dashboard = () => {
                     >
                       <Dot className="h-8 w-8" />
                       Salary Report
+                    </Link>
+                  </div>
+                ) : (
+                  ""
+                )}
+                {/* admission Start */}
+                <button className="" onClick={admissionNavHandler}>
+                  <div className="flex items-center justify-between">
+                    <a
+                      href="#"
+                      className={`flex items-center gap-3 rounded-lg px-3 py-2 mt-2 text-muted-foreground transition-all `}
+                    >
+                      {/* <DiamondPercent className="h-4 w-4" /> */}
+                      <FileSliders className="h-4 w-4" />
+                      Admission
+                    </a>
+                    {admissionNav ? (
+                      <Minus className="mt-2 h-4" />
+                    ) : (
+                      <Plus className="mt-2 h-4" />
+                    )}
+                  </div>
+                </button>
+                {admissionNav ? (
+                  <div className="">
+                    <Link
+                      to="/dashboard/add-admission"
+                      className={`flex items-center rounded-lg px-3 py-1 mb-1 ml-3 text-muted-foreground transition-all hover:text-white hover:bg-primary ${
+                        selectedMenu === "add-admission"
+                          ? "bg-primary text-primary-foreground"
+                          : ""
+                      }`}
+                      onClick={() => setSelectedMenu("add-admission")}
+                    >
+                      <Dot className="h-8 w-8" />
+                      Add Admission
+                    </Link>
+                    <Link
+                      to="/dashboard/admission-reports"
+                      className={`flex items-center rounded-lg px-3 py-1 ml-3 text-muted-foreground transition-all hover:text-white hover:bg-primary ${
+                        selectedMenu === "admission-reports"
+                          ? "bg-primary text-primary-foreground"
+                          : ""
+                      }`}
+                      onClick={() => setSelectedMenu("admission-reports")}
+                    >
+                      <Dot className="h-8 w-8" />
+                      Admission Report
                     </Link>
                   </div>
                 ) : (

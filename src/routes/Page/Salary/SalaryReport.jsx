@@ -20,6 +20,7 @@ import {
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Input } from "@/components/ui/input";
+import GenereateReport from "../Accounts/GenereateReport";
 const SalaryReport = () => {
   return (
     <>
@@ -41,7 +42,7 @@ const SalaryReport = () => {
           </Button>
         </form>
       </div>
-      <TooltipProvider>
+      {/* <TooltipProvider>
         <main className="">
           <Tabs defaultValue="all">
             <TabsContent value="all">
@@ -100,7 +101,8 @@ const SalaryReport = () => {
             </TabsContent>
           </Tabs>
         </main>
-      </TooltipProvider>
+      </TooltipProvider> */}
+      <GenereateReport />
     </>
   );
 };

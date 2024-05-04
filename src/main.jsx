@@ -36,6 +36,7 @@ import PaySalary from "./routes/Page/Salary/PaySalary";
 import SalaryReport from "./routes/Page/Salary/SalaryReport";
 import AdmissionReport from "./routes/Page/Admission/AdmissionReport";
 import AddAdmission from "./routes/Page/Admission/AddAdmission";
+import StudentProfile from './routes/Page/Student-Profile/StudentProfile';
 
 const router = createBrowserRouter([
   {
@@ -185,6 +186,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/admission-reports",
         element: <AdmissionReport />,
+      },
+      {
+        path: "/dashboard/student-profile",
+        element: <StudentProfile></StudentProfile>,
       },
 
       /*       {

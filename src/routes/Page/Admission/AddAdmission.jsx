@@ -121,7 +121,7 @@ const AddAdmission = () => {
       <div className="flex justify-between my-6">
         <h1 className="text-2xl font-bold mb-3">Add Admission</h1>
         <Select
-          placeholder="Admission Type"
+          placeholder="Student ID"
           options={options}
         />
       </div>

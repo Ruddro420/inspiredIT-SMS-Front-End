@@ -34,17 +34,17 @@ import {
 
 import { MoreHorizontal } from "lucide-react";
 
-const Results = () => {
+const Notice = () => {
   return (
     <>
       {" "}
       <div style={{ overflow: "hidden" }}>
-        <h1 className="text-2xl font-bold mb-3">Add Result</h1>
+        <h1 className="text-2xl font-bold mb-3">Add Notice</h1>
         <form className="border p-5 rounded">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-3 gap-4">
             <label htmlFor="Name" className="md:col-span-1">
-            Result Title
-              <Input type="text" name="name" placeholder="Result Title" />
+              Notice Title
+              <Input type="text" name="name" placeholder="Notice Title" />
             </label>
             <label htmlFor="Tuition Fee" className="md:col-span-1">
               Type
@@ -66,12 +66,12 @@ const Results = () => {
               <Input type="date" name="date" />
             </label>
             <label htmlFor="Image" className="md:col-span-1">
-              Upload Result
+              Upload Notice
               <Input type="file" name="image" />
             </label>
           </div>
           <Button size="sm" className="h-8 gap-1 mt-5">
-            Add Result
+            Add Notice
           </Button>
         </form>
       </div>
@@ -83,7 +83,7 @@ const Results = () => {
             <TabsContent value="all">
               <Card x-chunk="dashboard-06-chunk-0">
                 <CardHeader>
-                  <CardTitle>View Result Details</CardTitle>
+                  <CardTitle>View Notice Details</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <Table>
@@ -135,4 +135,4 @@ const Results = () => {
   );
 };
 
-export default Results;
+export default Notice;

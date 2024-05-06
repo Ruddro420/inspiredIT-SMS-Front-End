@@ -21,8 +21,6 @@ import AddNotices from "./routes/Page/Notices/AddNotices";
 import Fees from "./routes/Page/Fees/Fees";
 import AddFees from "./routes/Page/Fees/AddFees";
 import Sections from "./routes/Page/Sections/Sections";
-import Results from "./routes/Page/Result/Results";
-import AddResults from "./routes/Page/Result/AddResults";
 import IdCards from "./routes/Page/IdCard/IdCards";
 import AddIdCards from "./routes/Page/IdCard/AddIdCards";
 import Reports from "./routes/Page/Report/Reports";
@@ -37,6 +35,8 @@ import SalaryReport from "./routes/Page/Salary/SalaryReport";
 import AdmissionReport from "./routes/Page/Admission/AdmissionReport";
 import AddAdmission from "./routes/Page/Admission/AddAdmission";
 import StudentProfile from './routes/Page/Student-Profile/StudentProfile';
+import Notice from './routes/Page/Notice/Notice';
+import Results from "./routes/Page/Result/Results";
 
 const router = createBrowserRouter([
   {
@@ -123,13 +123,10 @@ const router = createBrowserRouter([
         path: "/dashboard/add-fees",
         element: <AddFees />,
       },
+      
       {
         path: "/dashboard/results",
         element: <Results />,
-      },
-      {
-        path: "/dashboard/add-results",
-        element: <AddResults />,
       },
       {
         path: "/dashboard/id-cards",
@@ -190,6 +187,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/student-profile",
         element: <StudentProfile></StudentProfile>,
+      },
+      {
+        path: "/dashboard/notice",
+        element: <Notice/>,
       },
 
       /*       {

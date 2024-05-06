@@ -1,6 +1,7 @@
 import {
   Album,
   Bell,
+  BellDot,
   BookOpen,
   BriefcaseBusiness,
   CalendarCheck,
@@ -12,10 +13,12 @@ import {
   LayoutPanelTop,
   Menu,
   Minus,
+  NotepadText,
   Package2,
   PersonStanding,
   Plus,
   ShieldPlus,
+  User,
   Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -45,13 +48,7 @@ const Dashboard = () => {
   const [staffNav, setStaffNav] = useState(false);
   const [subjectNav, setSubjectNav] = useState(false);
   const [classNav, setClassNav] = useState(false);
-  const [noticeNav, setNoticeNav] = useState(false);
-  const [feeNav, setFeeNav] = useState(false);
-  const [resultNav, setResultNav] = useState(false);
-  const [idCardNav, setIdCardNav] = useState(false);
-  // const [salaryNav, setSalaryNav] = useState(false);
-  const [reportNav, setReportNav] = useState(false);
-  const [examNav, setExamNav] = useState(false);
+
 
   const [accountsNav, setAccountsNav] = useState(false);
   const [salaryNav, setSalaryNav] = useState(false);
@@ -63,16 +60,10 @@ const Dashboard = () => {
     setStaffNav(false);
     setSubjectNav(false);
     setClassNav(false);
-    setNoticeNav(false);
-    setFeeNav(false);
-    setResultNav(false);
-    setSalaryNav(false);
-    setReportNav(false);
-    setExamNav(false);
-    setIdCardNav(false);
     setAccountsNav(false);
     setSalaryNav(false);
     setAdmissionNav(false);
+
   };
 
   const studentNavHandler = () => {
@@ -110,38 +101,7 @@ const Dashboard = () => {
   const navMenuHandler = () => {
     closeAllMenus();
   };
-  // const salaryNavHandler = () => {
-  //   closeAllMenus();
-  // };
-  // const noticeNavHandler = () => {
-  //   closeAllMenus();
-  //   setNoticeNav(!noticeNav);
-  // };
-  // const feeNavHandler = () => {
-  //   closeAllMenus();
-  //   setFeeNav(!feeNav);
-  // };
-  // const resultNavHandler = () => {
-  //   closeAllMenus();
-  //   setResultNav(!resultNav);
-  // };
-  // const idCardNavHandler = () => {
-  //   closeAllMenus();
-  //   setIdCardNav(!idCardNav);
-  // };
-  // const salaryNavHandler = () => {
-  //   closeAllMenus();
-  //   setSalaryNav(!salaryNav);
-  // };
-  // const reportNavHandler = () => {
-  //   closeAllMenus();
-  //   setReportNav(!reportNav);
-  // };
-  // const examNavHandler = () => {
-  //   closeAllMenus();
-  //   setExamNav(!examNav);
-  // };
-
+ 
   return (
     <>
       <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
@@ -596,10 +556,10 @@ const Dashboard = () => {
                   ""
                 )}
                 
-
+                    {/* student profile */}
                 <Link
                   to="/dashboard/student-profile"
-                  className={`flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary hover:text-white ${
+                  className={`flex items-center gap-3  rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary hover:text-white ${
                     selectedMenu === "student-profile"
                       ? "bg-primary text-primary-foreground"
                       : ""
@@ -609,8 +569,45 @@ const Dashboard = () => {
                     navMenuHandler();
                   }}
                 >
-                  <Home className="h-4 w-4" />
+                  {/* <Home className="h-4 w-4" /> */}
+                  <User  className="h-4 w-4"/>
                   Student Profile
+                </Link>
+                
+                    {/* notice */}
+                <Link
+                  to="/dashboard/notice"
+                  className={`flex items-center my-1 gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary hover:text-white ${
+                    selectedMenu === "notice"
+                      ? "bg-primary text-primary-foreground"
+                      : ""
+                  }`}
+                  onClick={() => {
+                    setSelectedMenu("notice");
+                    navMenuHandler();
+                  }}
+                >
+                  {/* <Home className="h-4 w-4" /> */}
+                  <BellDot className="h-4 w-4" />
+                  Notice
+                </Link>
+                
+                    {/* result */}
+                <Link
+                  to="/dashboard/results"
+                  className={`flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-primary hover:text-white ${
+                    selectedMenu === "results"
+                      ? "bg-primary text-primary-foreground"
+                      : ""
+                  }`}
+                  onClick={() => {
+                    setSelectedMenu("results");
+                    navMenuHandler();
+                  }}
+                >
+                  {/* <Home className="h-4 w-4" /> */}
+                  <NotepadText className="h-4 w-4" />
+                  Result
                 </Link>
 
                 {/* section */}

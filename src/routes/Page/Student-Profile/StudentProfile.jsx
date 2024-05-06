@@ -25,8 +25,8 @@ const StudentProfile = () => {
   return (
     <div className="container mx-auto px-4">
       <div className="">
-        <div className="flex flex-col-reverse md:flex-row gap-6">
-          <div className="w-full md:w-[66%]">
+        <div className="flex justify-between flex-col-reverse md:flex-row gap-6">
+          <div className="w-full md:w-[67%]">
             <div className="flex gap-4">
               {/* card 1 */}
               <div className="bg-white p-6 rounded-lg border">
